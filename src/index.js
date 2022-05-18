@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import App2 from './App2';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// // import App2 from './App2';
 
-// import { ConfigurationOptions } from 'aws-sdk'
-import * as AWS from 'aws-sdk'
+// // import { ConfigurationOptions } from 'aws-sdk'
+// import * as AWS from 'aws-sdk'
 
-// import reportWebVitals from './reportWebVitals';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+// // import reportWebVitals from './reportWebVitals';
+// // import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-AWS.config.update({
-  region: 'us-east-1',
-  endpoint: 'dynamodb.eu-west-1.amazonaws.com',
-  accessKeyId: ['AKIA6C5MES4OWIAO5TXO'],
-  secretAccessKey: ['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']
-});
+// AWS.config.update({
+//   region: 'us-east-1',
+//   endpoint: 'dynamodb.eu-west-1.amazonaws.com',
+//   accessKeyId: ['AKIA6C5MES4OWIAO5TXO'],
+//   secretAccessKey: ['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']
+// });
 
 // this.dynamodb = new AWS.DynamoDB();
 // this.docClient = new AWS.DynamoDB.DocumentClient();
