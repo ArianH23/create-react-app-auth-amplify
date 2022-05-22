@@ -27,7 +27,7 @@
 				text: "Righttext"
 			  }
 			];
-			const url = "https://1i98hqou99.execute-api.eu-west-1.amazonaws.com/default/changeDB";
+			const url = "https://trkvneegsfx5vafh3j6ev7mobe0pcshx.lambda-url.eu-west-1.on.aws/";
 			
 			//get the current status of votting
 			function get() {
@@ -46,9 +46,14 @@
 				  "type":"get" } ),
 					processData: false,
 					success: function( data, textStatus, jQxhr ){
+						console.log(data);
+						console.log(textStatus);
+
 						document.getElementById(text).value=data.body.Count;
 					},
 					error: function( jqXhr, textStatus, errorThrown ){
+						console.log(textStatus);
+
 						console.log( errorThrown );
 					}
 				});
