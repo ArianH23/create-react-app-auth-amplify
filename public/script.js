@@ -16,19 +16,23 @@ function get() {
             var neigh = [data.body[i].name, data.body[i].score, data.body[i].rank];
             neighbourhoods.push(neigh);
         }
-        console.log(neighbourhoods)
-
         
+        document.getElementById('neighbourhoodList').innerHTML = '';
+
+        document.getElementById('neighbourhoodList').innerHTML += 
+                "<ul id='neighbourhood-rank'>Rank</ul>"+
+				"<ul id='neighbourhood-name'>Name</ul>"+
+                "<ul id='neighbourhood-scores'>Score</ul>";
+				
         for (var i=0; i < data.body.length; i++) {
-            document.getElementById('neighbourhood-name').innerHTML += '<li>' + neighbourhoods[i][0] + '</li>';
             document.getElementById('neighbourhood-scores').innerHTML += '<li>' + neighbourhoods[i][1] +'</li>';
+            document.getElementById('neighbourhood-name').innerHTML += '<li>' + neighbourhoods[i][0] + '</li>';
             document.getElementById('neighbourhood-rank').innerHTML += '<li>' + neighbourhoods[i][2] + '</li>';
         }
         
 
     },
     error: function( jqXhr, textStatus, errorThrown ){
-        console.log("lmao");
         console.log( errorThrown );
     }
     });

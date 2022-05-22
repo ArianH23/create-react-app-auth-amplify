@@ -1,7 +1,7 @@
 body {
     background-color: rgb(152, 210, 210);
   }
-.test {
+.neighbourhoodList {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
