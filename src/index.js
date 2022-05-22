@@ -13,8 +13,6 @@
 // AWS.config.update({
 //   region: 'us-east-1',
 //   endpoint: 'dynamodb.eu-west-1.amazonaws.com',
-//   accessKeyId: ['AKIA6C5MES4OWIAO5TXO'],
-//   secretAccessKey: ['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']
 // });
 
 // this.dynamodb = new AWS.DynamoDB();
