@@ -1,13 +1,20 @@
 <html>
 	<head>
-	<title>Let's vote</title>
+	<title>Barcelona neighbourhood profiling</title>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	</head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+
 	<body onload="get()">
+		<!-- <div align="center"><img src="bcn.png" alt="BCN" >		</div> -->
 	<canvas id="bar-chart" width="300" height="150"></canvas>
 
 		<script>
@@ -27,32 +34,39 @@
 				text: "Righttext"
 			  }
 			];
-			const url = "https://trkvneegsfx5vafh3j6ev7mobe0pcshx.lambda-url.eu-west-1.on.aws/";
+			const url = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/sample";
 			
 			//get the current status of votting
 			function get() {
 			
-			for (var i=0; i<list.length;i++) {
+			for (var i=0; i<1;i++) {
 				id=Object.values(list)[i].id;
 				text=Object.values(list)[i].text;
 				$.ajax({
 					url: url,
+					// headers: {
+					// 	"Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+					// 	"Access-Control-Allow-Credentials" : true, // Required for cookies, authorization headers with HTTPS 
+					// 	"Access-Control-Allow-Methods": "*", //"GET,HEAD,OPTIONS,POST,PUT",
+					// 	"Access-Control-Allow-Headers": "Access-Control-Allow-Credentials" //"Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,Access-Control-Allow-Credentials"
+					// },
+					// statusCode: 200,
 					dataType: 'json',
 					type: 'post',
 					async: false,
 					contentType: 'application/json',
+					
 					data: JSON.stringify( {
-				  "id":id,
-				  "type":"get" } ),
+						"id":id,
+						"type":"get" } ),
 					processData: false,
 					success: function( data, textStatus, jQxhr ){
-						console.log(data);
-						console.log(textStatus);
+						console.log( "data" );
 
 						document.getElementById(text).value=data.body.Count;
 					},
 					error: function( jqXhr, textStatus, errorThrown ){
-						console.log(textStatus);
+						console.log("lmao")
 
 						console.log( errorThrown );
 					}
@@ -130,11 +144,14 @@
 		<br>
 		<br>
 		<br>
+
 		<h1><span id="my-demo">Potato</span></h1>
+
 		<input type="text" id="Potatotext" disabled>
 		<button type="button" class="btn-primary" id="Potato" onclick="update(this.id)">Support</button>
 		<h1><span id="my-demo2">LamLam</span></h1>
 		<input type="text" id="LamLamtext" disabled>
+
 		<button type="button" class="btn-primary" id="LamLam" onclick="update(this.id)">Support</button>
 		<h1><span id="my-demo3">Right</span></h1>
 		<input type="text" id="Righttext" disabled>
