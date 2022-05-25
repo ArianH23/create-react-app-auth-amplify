@@ -1,69 +1,76 @@
 <html>
 	<head>
-	<title>Barcelona neighbourhood profiling</title>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<title>Barcelona neighbourhood profiling</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	</head>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap">
 
 	<body>
-		<div align="center"><img src="bcn.png" alt="BCN" >		</div>
-	
-		<br>
-		<br>
+		<div class="content">
+			<div class="container">
+				<h1 class="neonText">
+					  Barcelona
+				</h1>
+				<h2 class="neonText">neighbourhood profiling</h2>
 
-		<div>Do you have any kids?
-			<input type="radio" id="kidsChoice"
-			 name="kids" value="Yes">
-			<label for="kidsChoice1">Yes</label>
-		
-			<input type="radio" id="kidsChoice"
-			 name="kids" value="No">
-			<label for="kidsChoice2">No</label>
-		
+			</div>
+
+			<div class="img">
+				<img src="bcn.png" alt="BCN" >
+			</div>
+
+			<br>
+			<br>
+			<div class="dpx">
+				<div class="px">
+					<h3>Do you have any kids?</h3>
+					<input type="radio" id="kidsChoice1" name="kids" value="Yes" class="option-input radio">
+					<label for="kidsChoice1">Yes</label>
+
+					<input type="radio" id="kidsChoice2" name="kids" value="No" class="option-input radio">
+					<label for="kidsChoice2">No</label>
+				</div>
+
+				<div class="py">
+					<h3>What is your age group?</h3>
+					<input type="radio" id="ageChoice1" name="age" value="Young" class="option-input radio">
+					<label for="ageChoice1">Young</label>
+
+					<input type="radio" id="ageChoice2" name="age" value="Middle age" class="option-input radio">
+					<label for="ageChoice2">Middle age</label>
+
+					<input type="radio" id="ageChoice3" name="age" value="Elderly" class="option-input radio">
+					<label for="ageChoice2">Elderly</label>
+				</div>
+			</div>
+			<div class="wrap">
+			  <button class="button" onclick="get()">Submit</button>
+			</div>
+
+			<script src="script.js"> </script>
+			<div id="neighbourhoodList" class="neighbourhoodList"></div>
+
+			<div align="center">
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<br>
+			</div>
 		</div>
-
-		<div>What is your age group?
-			<input type="radio" id="ageChoice1"
-			 name="age" value="Young">
-			<label for="ageChoice1">Young</label>
-		
-			<input type="radio" id="ageChoice2"
-			 name="age" value="Middle age">
-			<label for="ageChoice2">Middle age</label>
-
-			<input type="radio" id="ageChoice2"
-			 name="age" value="Elderly">
-			<label for="ageChoice2">Elderly</label>
-		
-		</div>
-
-		<br>
-		<div align="left"><button  onclick="get()" type="button">Send!</button></div>
- 		 
-		<br>
-		<br>
-
-		<script src="script.js"> </script>
-		<div id="neighbourhoodList" class="neighbourhoodList">
-			
-		</div>
-
-	<div align="center">
-		<br>
-		<br>
-		<br>
-		<br>
-
-		<br>
-	</div>
 
 	</body>
 </html>
