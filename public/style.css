@@ -31,11 +31,19 @@ body{background:#edf2f9}
   align-items:center;
   justify-content:space-around;
 }
+
 h1{
   font-size:28px;
   line-height:28px;
   margin-bottom:15px;
 }
+
+.div3{
+  font-size:28px;
+  line-height:28px;
+  margin-bottom:15px;
+}
+
 label{
   display:block;
   line-height:40px;
