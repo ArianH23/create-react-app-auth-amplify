@@ -1,6 +1,4 @@
-
-const url = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/sample";
-
+const url = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking";
 
 //get the current status of votting
 function get() {
