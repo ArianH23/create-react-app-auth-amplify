@@ -16,20 +16,42 @@ function get() {
         }
         
         document.getElementById('neighbourhoodList').innerHTML = '';
-
-        document.getElementById('neighbourhoodList').innerHTML += 
-                "<ul id='neighbourhood-rank'>Rank</ul>"+
-				"<ul id='neighbourhood-name'>Name</ul>"+
-                "<ul id='neighbourhood-scores'>Score</ul>";
-				
-        for (var i=0; i < data.body.length; i++) {
-            document.getElementById('neighbourhood-scores').innerHTML += '<li>' + neighbourhoods[i][1] +'</li>';
-            document.getElementById('neighbourhood-name').innerHTML += '<li>' + neighbourhoods[i][0] + '</li>';
-            document.getElementById('neighbourhood-rank').innerHTML += '<li>' + neighbourhoods[i][2] + '</li>';
-        }
         
+        document.getElementById('neighbourhoodList').innerHTML +=         
+        "<table  id=tab>"+
+        "<tr style='text-align:center'>"+
+            "<th style='text-align:center'>Rank</th>"+
+            "<th style='text-align:center'>Name</th>"+ 
+            "<th style='text-align:center'>Score</th>"+
+        "</tr>";
+        
+                    
+        for (var i=0; i < neighbourhoods.length; i++) {
+            // Keep the row color
+            if (i%2==1){
+                document.getElementById('tab').innerHTML +=
+                    '<tr>'+
+                        '<td style="text-align:center">'+neighbourhoods[i][2]+'</td>'+
+                        "<td style='text-align:center'>"+neighbourhoods[i][0]+"</td>"+
+                        "<td style='text-align:center'>"+neighbourhoods[i][1]+"</td>"+
+                    '</tr>'
+            }
+            
+            // Use another color for even rows
+            else{
+                var col = "#091d43"
+                document.getElementById('tab').innerHTML +=
+                    '<tr>'+
+                        '<td style="text-align:center" ; bgcolor='+col+'>'+neighbourhoods[i][2]+'</td>'+
+                        "<td style='text-align:center' ; bgcolor="+col+'>'+neighbourhoods[i][0]+"</td>"+
+                        "<td style='text-align:center' ; bgcolor="+col+'>'+neighbourhoods[i][1]+"</td>"+
+                    '</tr>'
+            }
+        }
 
+    document.getElementById('tab').innerHTML += '</table>';
     },
+
     error: function( jqXhr, textStatus, errorThrown ){
         console.log( errorThrown );
     }

@@ -1,13 +1,3 @@
-body {
-    background-color: rgb(152, 210, 210);
-  }
-.neighbourhoodList {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 50px;
-}
-
 .img{
   margin-top: 10%;
   display: block;
@@ -178,7 +168,7 @@ h1 {
 }
 body{
   color: #eee;
-  background: #2e2e2e;
+  background: #181a26;
 }
 body a{
   color: #809fff;
@@ -222,4 +212,20 @@ h1, h2 {
   text-align: center;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+table {
+  width: 300px;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid #ffffff;
+}
+table {
+  width: 90%;
+  font-size: large;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
 }
