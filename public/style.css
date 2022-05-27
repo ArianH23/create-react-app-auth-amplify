@@ -176,7 +176,13 @@ h1 {
   font-size: 4.2rem;
   animation: flicker 1.5s infinite alternate;
 }
-
+body{
+  color: #eee;
+  background: #2e2e2e;
+}
+body a{
+  color: #809fff;
+}
 /* Flickering animation */
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
