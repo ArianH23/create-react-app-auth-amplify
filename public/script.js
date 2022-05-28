@@ -1,4 +1,4 @@
-var baseUrl = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking?";
+const baseUrl = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking?";
 
 //get the current status of votting
 function get() {
