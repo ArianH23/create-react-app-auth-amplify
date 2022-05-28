@@ -1,7 +1,14 @@
-const url = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking";
+var baseUrl = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking?";
 
 //get the current status of votting
 function get() {
+    
+    var kids = document.querySelector('input[type=radio][name=kids]:checked').value;
+    var age = document.querySelector('input[type=radio][name=age]:checked').value;
+
+    url = baseUrl + 'age=' + age + '&kids=' + kids;
+
+    console.log(url)
 
     $.ajax({
     url: url,
