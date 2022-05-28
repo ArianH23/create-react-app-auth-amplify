@@ -8,8 +8,6 @@ function get() {
 
     url = baseUrl + 'age=' + age + '&kids=' + kids;
 
-    console.log(url)
-
     $.ajax({
     url: url,
     type: 'get',
