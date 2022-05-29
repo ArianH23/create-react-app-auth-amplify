@@ -1,10 +1,6 @@
 const baseUrl = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking?";
 
-var someURl = process.env.LAMBDA;
-
-//get the current status of votting
-function get() {
-    console.log(someURl)
+function get() {    
     var kids = document.querySelector('input[type=radio][name=kids]:checked').value;
     var age = document.querySelector('input[type=radio][name=age]:checked').value;
 
@@ -65,23 +61,3 @@ function get() {
     });
 
 }
-
-
-// Will need to get updated inthe future
-function update(clicked_id) {
-    $.ajax({
-    url: url,
-    type: 'get',
-    async: false,
-    success: function( data, textStatus, jQxhr ){
-        document.getElementById(text).value=data.body.Count;
-    },
-    error: function( jqXhr, textStatus, errorThrown ){
-        console.log( errorThrown );
-    }
-    });
-}
-			
-			
-
-
