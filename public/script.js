@@ -1,8 +1,10 @@
 const baseUrl = "https://4xthlyydt2.execute-api.eu-west-1.amazonaws.com/production/ranking?";
 
+var someURl = process.env.LAMBDA;
+
 //get the current status of votting
 function get() {
-    
+    console.log(someURl)
     var kids = document.querySelector('input[type=radio][name=kids]:checked').value;
     var age = document.querySelector('input[type=radio][name=age]:checked').value;
 
